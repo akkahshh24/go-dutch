@@ -1,0 +1,22 @@
+version: "2"
+sql:
+  - engine: "postgresql"
+    queries: "./db/query"
+    schema: "./db/migration"
+    gen:
+      go:
+        package: "db"
+        out: "./db/sqlc"
+        sql_package: "pgx/v5"
+        overrides:
+          - db_type: "pg_catalog.varchar"
+            go_type: "string"
+            nullable: true
+          - db_type: "pg_catalog.text"
+            go_type: "string"
+            nullable: true
+        emit_json_tags: true 
+        emit_prepared_queries: false
+        emit_interface: false
+        emit_exact_table_names: false
+        emit_empty_slices: true
