@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS "balances";
+DROP TABLE IF EXISTS "expenses";
+DROP TABLE IF EXISTS "members";
+DROP TABLE IF EXISTS "groups";
+DROP TABLE IF EXISTS "users";
